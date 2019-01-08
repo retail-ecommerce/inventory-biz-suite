@@ -1,0 +1,44 @@
+<?xml version='1.0' ?>
+<root org="doublechaintech">
+
+	<platform
+		name="Chain eComerce Platform"
+		introduction="new generation of eCommerce platform based on opensource and modern tech"
+		current_version="V1.0"
+		
+	
+	/>
+	 <!-- Multiple site support -->
+	<product
+		name="The PRODUCT"
+		introduction="The primary site for show the concept"
+		platform="$(platform)"
+		last_update_time="updateTime()"
+		
+	/>
+	<sku_inventory
+		
+		stock_level="1000"
+		backorder_level="1000"
+		preorder_level="1000"
+		stock_threshold="1000"
+		backorder_threshol="1000"
+		preorder_threshol="1000"
+		status="IN_STOCK|OUT_OF_STOCK"
+		product="$(product)"
+		platform="$(platform)"
+	/>
+	
+	
+	
+</root>
+ 
+
+
+
+
+
+
+
+
+

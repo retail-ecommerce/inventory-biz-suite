@@ -1,0 +1,87 @@
+@warning sku_inventory.backorder_threshol: word 'threshol' seems not found in library
+
+
+
+=================Execute Report (Model Time 190108T1830) @Tue Jan 08 23:41:48 CST 2019, 16 objects and 128 fields===========================
+
+
+
+ processing: platform
+
+
+ processing: product
+
+
+ processing: product.platform.platform
+
+Info: Add virtual field [products(es)] to <platform>
+	product.platform
+
+
+ processing: sku_inventory
+
+
+ processing: sku_inventory.product.product
+
+Info: Add virtual field [sku_inventorys(es)] to <product>
+	sku_inventory.product
+
+
+ processing: sku_inventory.platform.platform
+
+Info: Add virtual field [sku_inventorys(es)] to <platform>
+	sku_inventory.platform
+
+
+**************************************************
+
+platform{
+	fields(5){
+		string	id('ABCDEFGIJK000001'), verb: false, required: true;
+		string	name('Chain eComerce Platform'), verb: false, required: true;
+		string	introduction('new generation of eCommerce platform based on opensource and modern tech'), verb: false, required: true;
+		string	current_version('V1.0'), verb: false, required: true;
+		int	version('2147483647'), verb: false, required: true;
+	}
+	references field(2){
+		productList	platform(基本信息)--platform;
+		skuInventoryList	platform(基本信息)--platform;
+	}
+} depth=0; isRoot = true
+
+product{
+	fields(6){
+		string	id('ABCDEFGIJK000001'), verb: false, required: true;
+		string	name('The PRODUCT'), verb: false, required: true;
+		string	introduction('The primary site for show the concept'), verb: false, required: true;
+		platform	platform('$(object)'), verb: false, required: true, referenceBy: productList;
+		date_time_update	last_update_time('updateTime()'), verb: false, required: true;
+		int	version('2147483647'), verb: false, required: true;
+	}
+	references field(1){
+		skuInventoryList	product(基本信息)--product;
+	}
+} depth=1; isRoot = false
+
+sku_inventory{
+	fields(11){
+		string	id('ABCDEFGIJK000001'), verb: false, required: true;
+		int	stock_level('1000'), verb: false, required: true;
+		int	backorder_level('1000'), verb: false, required: true;
+		int	preorder_level('1000'), verb: false, required: true;
+		int	stock_threshold('1000'), verb: false, required: true;
+		int	backorder_threshol('1000'), verb: false, required: true;
+		int	preorder_threshol('1000'), verb: false, required: true;
+		string	status('IN_STOCK|OUT_OF_STOCK'), verb: false, required: true;
+		product	product('$(object)'), verb: false, required: true, referenceBy: skuInventoryList;
+		platform	platform('$(object)'), verb: false, required: true, referenceBy: skuInventoryList;
+		int	version('2147483647'), verb: false, required: true;
+	}
+	references field(0){
+	}
+} depth=2; isRoot = false
+
+
+
+
+=================================End Report=================================
