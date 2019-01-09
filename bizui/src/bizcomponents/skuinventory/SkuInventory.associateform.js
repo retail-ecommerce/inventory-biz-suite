@@ -18,12 +18,12 @@ const { TextArea } = Input
 const testValues = {};
 /*
 const testValues = {
-  stockLevel: '981',
-  backorderLevel: '824',
-  preorderLevel: '789',
-  stockThreshold: '955',
-  backorderThreshol: '899',
-  preorderThreshol: '775',
+  stockLevel: '759',
+  backorderLevel: '770',
+  preorderLevel: '947',
+  stockThreshold: '882',
+  backorderThreshol: '887',
+  preorderThreshol: '986',
   status: 'IN_STOCK',
   productId: 'P000001',
   platformId: 'P000001',
