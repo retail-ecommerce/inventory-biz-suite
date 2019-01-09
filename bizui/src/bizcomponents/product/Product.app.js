@@ -239,7 +239,7 @@ class ProductBizApp extends React.PureComponent {
   getPageTitle = () => {
     // const { location } = this.props
     // const { pathname } = location
-    const title = 'null'
+    const title = 'Inventory Services'
     return title
   }
  
