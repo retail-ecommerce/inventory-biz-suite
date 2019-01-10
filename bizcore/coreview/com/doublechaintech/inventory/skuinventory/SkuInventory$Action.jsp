@@ -18,6 +18,7 @@
 	
 	
 	<li><span>${userContext.localeMap['sku_inventory.id']}</span> ${skuInventory.id}</li>
+<li><span>${userContext.localeMap['sku_inventory.name']}</span> ${skuInventory.name}</li>
 <li><span>${userContext.localeMap['sku_inventory.stock_level']}</span> ${skuInventory.stockLevel}</li>
 <li><span>${userContext.localeMap['sku_inventory.backorder_level']}</span> ${skuInventory.backorderLevel}</li>
 <li><span>${userContext.localeMap['sku_inventory.preorder_level']}</span> ${skuInventory.preorderLevel}</li>

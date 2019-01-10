@@ -2,7 +2,7 @@
 
 
 
-=================Execute Report (Model Time 190109T2340) @Thu Jan 10 00:43:46 CST 2019, 16 objects and 128 fields===========================
+=================Execute Report (Model Time 190110T0110) @Thu Jan 10 10:45:01 CST 2019, 16 objects and 129 fields===========================
 
 
 
@@ -64,8 +64,9 @@ product{
 } depth=1; isRoot = false
 
 sku_inventory{
-	fields(11){
+	fields(12){
 		string	id('ABCDEFGIJK000001'), verb: false, required: true;
+		string	name('Blue Jeans'), verb: false, required: true;
 		int	stock_level('1000'), verb: false, required: true;
 		int	backorder_level('1000'), verb: false, required: true;
 		int	preorder_level('1000'), verb: false, required: true;
@@ -110,8 +111,9 @@ product{
 } depth=1; isRoot = false
 
 sku_inventory{
-	fields(11){
+	fields(12){
 		string	id('ABCDEFGIJK000001'), verb: false, required: true;
+		string	name('Blue Jeans'), verb: false, required: true;
 		int	stock_level('1000'), verb: false, required: true;
 		int	backorder_level('1000'), verb: false, required: true;
 		int	preorder_level('1000'), verb: false, required: true;

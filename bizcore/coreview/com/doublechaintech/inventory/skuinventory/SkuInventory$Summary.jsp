@@ -37,6 +37,10 @@
 <span >${result.id}</span>
 </div>
 <div class="col-xs-12 col-md-3 summary-section">
+<span class="summary-label">${userContext.localeMap['sku_inventory.name']}</span>
+<span >${result.name}</span>
+</div>
+<div class="col-xs-12 col-md-3 summary-section">
 <span class="summary-label">${userContext.localeMap['sku_inventory.stock_level']}</span>
 <span >${result.stockLevel}</span>
 </div>

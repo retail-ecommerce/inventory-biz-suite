@@ -98,6 +98,9 @@
 		<c:if test="${param.referName ne 'id'}">
 	<th>${userContext.localeMap['sku_inventory.id']}</th>
 </c:if>
+<c:if test="${param.referName ne 'name'}">
+	<th>${userContext.localeMap['sku_inventory.name']}</th>
+</c:if>
 <c:if test="${param.referName ne 'stockLevel'}">
 	<th>${userContext.localeMap['sku_inventory.stock_level']}</th>
 </c:if>
@@ -131,7 +134,8 @@
 			
 			<c:forEach var="item" items="${skuInventoryList}">
 				<tr currentVersion='${item.version}' id="skuInventory-${item.id}" ><td><a class="link-action-removed" href="./skuInventoryManager/view/${item.id}/"> ${item.id}</a></td>
-<c:if test="${param.referName ne 'stockLevel'}">	<td contenteditable='true' class='edit-value'  propertyToChange='stockLevel' storedCellValue='${item.stockLevel}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.stockLevel}</td>
+<c:if test="${param.referName ne 'name'}">	<td contenteditable='true' class='edit-value'  propertyToChange='name' storedCellValue='${item.name}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.name}</td>
+</c:if><c:if test="${param.referName ne 'stockLevel'}">	<td contenteditable='true' class='edit-value'  propertyToChange='stockLevel' storedCellValue='${item.stockLevel}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.stockLevel}</td>
 </c:if><c:if test="${param.referName ne 'backorderLevel'}">	<td contenteditable='true' class='edit-value'  propertyToChange='backorderLevel' storedCellValue='${item.backorderLevel}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.backorderLevel}</td>
 </c:if><c:if test="${param.referName ne 'preorderLevel'}">	<td contenteditable='true' class='edit-value'  propertyToChange='preorderLevel' storedCellValue='${item.preorderLevel}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.preorderLevel}</td>
 </c:if><c:if test="${param.referName ne 'stockThreshold'}">	<td contenteditable='true' class='edit-value'  propertyToChange='stockThreshold' storedCellValue='${item.stockThreshold}' prefix='${ownerBeanName}Manager/updateSkuInventory/${result.id}/${item.id}/'>${item.stockThreshold}</td>
