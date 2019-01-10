@@ -34,6 +34,20 @@ public class SkuInventoryForm extends BaseForm {
 	}
 
 
+	public SkuInventoryForm nameField(String parameterName, String initValue){
+		FormField field = nameFromSkuInventory(parameterName, initValue);		
+		this.addFormField(field);
+		return this;
+	}
+	
+	public SkuInventoryForm nameField(String initValue){
+		return nameField("name",initValue);
+	}
+	public SkuInventoryForm nameField(){
+		return nameField("name","");
+	}
+
+
 	public SkuInventoryForm stockLevelField(String parameterName, String initValue){
 		FormField field = stockLevelFromSkuInventory(parameterName, initValue);		
 		this.addFormField(field);

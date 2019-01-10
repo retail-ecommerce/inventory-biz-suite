@@ -637,7 +637,7 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 
 
 
-	protected void checkParamsForAddingSkuInventory(InventoryUserContext userContext, String platformId, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId,String [] tokensExpr) throws Exception{
+	protected void checkParamsForAddingSkuInventory(InventoryUserContext userContext, String platformId, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId,String [] tokensExpr) throws Exception{
 		
 		
 
@@ -645,6 +645,8 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 		
 		userContext.getChecker().checkIdOfPlatform(platformId);
 
+		
+		userContext.getChecker().checkNameOfSkuInventory(name);
 		
 		userContext.getChecker().checkStockLevelOfSkuInventory(stockLevel);
 		
@@ -666,12 +668,12 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 
 	
 	}
-	public  Platform addSkuInventory(InventoryUserContext userContext, String platformId, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String [] tokensExpr) throws Exception
+	public  Platform addSkuInventory(InventoryUserContext userContext, String platformId, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String [] tokensExpr) throws Exception
 	{	
 		
-		checkParamsForAddingSkuInventory(userContext,platformId,stockLevel, backorderLevel, preorderLevel, stockThreshold, backorderThreshol, preorderThreshol, status, productId,tokensExpr);
+		checkParamsForAddingSkuInventory(userContext,platformId,name, stockLevel, backorderLevel, preorderLevel, stockThreshold, backorderThreshol, preorderThreshol, status, productId,tokensExpr);
 		
-		SkuInventory skuInventory = createSkuInventory(userContext,stockLevel, backorderLevel, preorderLevel, stockThreshold, backorderThreshol, preorderThreshol, status, productId);
+		SkuInventory skuInventory = createSkuInventory(userContext,name, stockLevel, backorderLevel, preorderLevel, stockThreshold, backorderThreshol, preorderThreshol, status, productId);
 		
 		Platform platform = loadPlatform(userContext, platformId, allTokens());
 		synchronized(platform){ 
@@ -684,11 +686,12 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 			return present(userContext,platform, mergedAllTokens(tokensExpr));
 		}
 	}
-	protected void checkParamsForUpdatingSkuInventoryProperties(InventoryUserContext userContext, String platformId,String id,int stockLevel,int backorderLevel,int preorderLevel,int stockThreshold,int backorderThreshol,int preorderThreshol,String status,String [] tokensExpr) throws Exception {
+	protected void checkParamsForUpdatingSkuInventoryProperties(InventoryUserContext userContext, String platformId,String id,String name,int stockLevel,int backorderLevel,int preorderLevel,int stockThreshold,int backorderThreshol,int preorderThreshol,String status,String [] tokensExpr) throws Exception {
 		
 		userContext.getChecker().checkIdOfPlatform(platformId);
 		userContext.getChecker().checkIdOfSkuInventory(id);
 		
+		userContext.getChecker().checkNameOfSkuInventory( name);
 		userContext.getChecker().checkStockLevelOfSkuInventory( stockLevel);
 		userContext.getChecker().checkBackorderLevelOfSkuInventory( backorderLevel);
 		userContext.getChecker().checkPreorderLevelOfSkuInventory( preorderLevel);
@@ -700,9 +703,9 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 		userContext.getChecker().throwExceptionIfHasErrors(PlatformManagerException.class);
 		
 	}
-	public  Platform updateSkuInventoryProperties(InventoryUserContext userContext, String platformId, String id,int stockLevel,int backorderLevel,int preorderLevel,int stockThreshold,int backorderThreshol,int preorderThreshol,String status, String [] tokensExpr) throws Exception
+	public  Platform updateSkuInventoryProperties(InventoryUserContext userContext, String platformId, String id,String name,int stockLevel,int backorderLevel,int preorderLevel,int stockThreshold,int backorderThreshol,int preorderThreshol,String status, String [] tokensExpr) throws Exception
 	{	
-		checkParamsForUpdatingSkuInventoryProperties(userContext,platformId,id,stockLevel,backorderLevel,preorderLevel,stockThreshold,backorderThreshol,preorderThreshol,status,tokensExpr);
+		checkParamsForUpdatingSkuInventoryProperties(userContext,platformId,id,name,stockLevel,backorderLevel,preorderLevel,stockThreshold,backorderThreshol,preorderThreshol,status,tokensExpr);
 
 		Map<String, Object> options = tokens()
 				.allTokens()
@@ -717,6 +720,7 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 		
 		SkuInventory item = platformToUpdate.getSkuInventoryList().first();
 		
+		item.updateName( name );
 		item.updateStockLevel( stockLevel );
 		item.updateBackorderLevel( backorderLevel );
 		item.updatePreorderLevel( preorderLevel );
@@ -734,11 +738,12 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 	}
 	
 	
-	protected SkuInventory createSkuInventory(InventoryUserContext userContext, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId) throws Exception{
+	protected SkuInventory createSkuInventory(InventoryUserContext userContext, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId) throws Exception{
 
 		SkuInventory skuInventory = new SkuInventory();
 		
 		
+		skuInventory.setName(name);		
 		skuInventory.setStockLevel(stockLevel);		
 		skuInventory.setBackorderLevel(backorderLevel);		
 		skuInventory.setPreorderLevel(preorderLevel);		
@@ -860,6 +865,10 @@ public class PlatformManagerImpl extends CustomInventoryCheckerManager implement
 		userContext.getChecker().checkVersionOfSkuInventory(skuInventoryVersion);
 		
 
+		if(SkuInventory.NAME_PROPERTY.equals(property)){
+			userContext.getChecker().checkNameOfSkuInventory(parseString(newValueExpr));
+		}
+		
 		if(SkuInventory.STOCK_LEVEL_PROPERTY.equals(property)){
 			userContext.getChecker().checkStockLevelOfSkuInventory(parseInt(newValueExpr));
 		}

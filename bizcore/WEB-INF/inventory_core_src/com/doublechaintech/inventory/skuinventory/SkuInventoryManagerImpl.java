@@ -164,13 +164,14 @@ public class SkuInventoryManagerImpl extends CustomInventoryCheckerManager imple
  	
 
 
-	public SkuInventory createSkuInventory(InventoryUserContext userContext,int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String platformId) throws Exception
+	public SkuInventory createSkuInventory(InventoryUserContext userContext,String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String platformId) throws Exception
 	{
 		
 		
 
 		
 
+		userContext.getChecker().checkNameOfSkuInventory(name);
 		userContext.getChecker().checkStockLevelOfSkuInventory(stockLevel);
 		userContext.getChecker().checkBackorderLevelOfSkuInventory(backorderLevel);
 		userContext.getChecker().checkPreorderLevelOfSkuInventory(preorderLevel);
@@ -184,6 +185,7 @@ public class SkuInventoryManagerImpl extends CustomInventoryCheckerManager imple
 
 		SkuInventory skuInventory=createNewSkuInventory();	
 
+		skuInventory.setName(name);
 		skuInventory.setStockLevel(stockLevel);
 		skuInventory.setBackorderLevel(backorderLevel);
 		skuInventory.setPreorderLevel(preorderLevel);
@@ -225,6 +227,9 @@ public class SkuInventoryManagerImpl extends CustomInventoryCheckerManager imple
 		userContext.getChecker().checkVersionOfSkuInventory( skuInventoryVersion);
 		
 
+		if(SkuInventory.NAME_PROPERTY.equals(property)){
+			userContext.getChecker().checkNameOfSkuInventory(parseString(newValueExpr));
+		}
 		if(SkuInventory.STOCK_LEVEL_PROPERTY.equals(property)){
 			userContext.getChecker().checkStockLevelOfSkuInventory(parseInt(newValueExpr));
 		}

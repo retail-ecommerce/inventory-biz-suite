@@ -524,35 +524,9 @@ public class SkuInventoryJDBCTemplateDAO extends InventoryNamingServiceDAO imple
  		return prepareSkuInventoryCreateParameters(skuInventory);
  	}
  	protected Object[] prepareSkuInventoryUpdateParameters(SkuInventory skuInventory){
- 		Object[] parameters = new Object[12];
+ 		Object[] parameters = new Object[13];
  
- 		parameters[0] = skuInventory.getStockLevel();
- 		parameters[1] = skuInventory.getBackorderLevel();
- 		parameters[2] = skuInventory.getPreorderLevel();
- 		parameters[3] = skuInventory.getStockThreshold();
- 		parameters[4] = skuInventory.getBackorderThreshol();
- 		parameters[5] = skuInventory.getPreorderThreshol();
- 		parameters[6] = skuInventory.getStatus(); 	
- 		if(skuInventory.getProduct() != null){
- 			parameters[7] = skuInventory.getProduct().getId();
- 		}
-  	
- 		if(skuInventory.getPlatform() != null){
- 			parameters[8] = skuInventory.getPlatform().getId();
- 		}
- 		
- 		parameters[9] = skuInventory.nextVersion();
- 		parameters[10] = skuInventory.getId();
- 		parameters[11] = skuInventory.getVersion();
- 				
- 		return parameters;
- 	}
- 	protected Object[] prepareSkuInventoryCreateParameters(SkuInventory skuInventory){
-		Object[] parameters = new Object[10];
-		String newSkuInventoryId=getNextId();
-		skuInventory.setId(newSkuInventoryId);
-		parameters[0] =  skuInventory.getId();
- 
+ 		parameters[0] = skuInventory.getName();
  		parameters[1] = skuInventory.getStockLevel();
  		parameters[2] = skuInventory.getBackorderLevel();
  		parameters[3] = skuInventory.getPreorderLevel();
@@ -562,11 +536,39 @@ public class SkuInventoryJDBCTemplateDAO extends InventoryNamingServiceDAO imple
  		parameters[7] = skuInventory.getStatus(); 	
  		if(skuInventory.getProduct() != null){
  			parameters[8] = skuInventory.getProduct().getId();
+ 		}
+  	
+ 		if(skuInventory.getPlatform() != null){
+ 			parameters[9] = skuInventory.getPlatform().getId();
+ 		}
+ 		
+ 		parameters[10] = skuInventory.nextVersion();
+ 		parameters[11] = skuInventory.getId();
+ 		parameters[12] = skuInventory.getVersion();
+ 				
+ 		return parameters;
+ 	}
+ 	protected Object[] prepareSkuInventoryCreateParameters(SkuInventory skuInventory){
+		Object[] parameters = new Object[11];
+		String newSkuInventoryId=getNextId();
+		skuInventory.setId(newSkuInventoryId);
+		parameters[0] =  skuInventory.getId();
+ 
+ 		parameters[1] = skuInventory.getName();
+ 		parameters[2] = skuInventory.getStockLevel();
+ 		parameters[3] = skuInventory.getBackorderLevel();
+ 		parameters[4] = skuInventory.getPreorderLevel();
+ 		parameters[5] = skuInventory.getStockThreshold();
+ 		parameters[6] = skuInventory.getBackorderThreshol();
+ 		parameters[7] = skuInventory.getPreorderThreshol();
+ 		parameters[8] = skuInventory.getStatus(); 	
+ 		if(skuInventory.getProduct() != null){
+ 			parameters[9] = skuInventory.getProduct().getId();
  		
  		}
  		 	
  		if(skuInventory.getPlatform() != null){
- 			parameters[9] = skuInventory.getPlatform().getId();
+ 			parameters[10] = skuInventory.getPlatform().getId();
  		
  		}
  				

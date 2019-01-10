@@ -209,6 +209,19 @@ public class BaseForm extends GenericForm{
 		return field;
 	}
 
+	protected FormField nameFromSkuInventory(String parameterName, String initValue){
+		FormField field = new FormField();
+		field.setLabel("Name");
+		field.setLocaleKey("sku_inventory.name");
+		field.setParameterName(parameterName);
+		field.setDefaultValue(initValue);
+		field.setFieldGroup("基本信息");
+		field.setType("text");
+		field.setRequired(true);
+		field.setPlaceholder("请填写Name");
+		return field;
+	}
+
 	protected FormField stockLevelFromSkuInventory(String parameterName, String initValue){
 		FormField field = new FormField();
 		field.setLabel("Stock Level");

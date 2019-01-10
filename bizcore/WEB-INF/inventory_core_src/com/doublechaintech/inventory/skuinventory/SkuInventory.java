@@ -19,6 +19,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 
 	
 	public static final String ID_PROPERTY                    = "id"                ;
+	public static final String NAME_PROPERTY                  = "name"              ;
 	public static final String STOCK_LEVEL_PROPERTY           = "stockLevel"        ;
 	public static final String BACKORDER_LEVEL_PROPERTY       = "backorderLevel"    ;
 	public static final String PREORDER_LEVEL_PROPERTY        = "preorderLevel"     ;
@@ -38,7 +39,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 	
 	public String getDisplayName(){
 	
-		String displayName = getStatus();
+		String displayName = getName();
 		if(displayName!=null){
 			return displayName;
 		}
@@ -51,6 +52,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 	
 
 	protected		String              	mId                 ;
+	protected		String              	mName               ;
 	protected		int                 	mStockLevel         ;
 	protected		int                 	mBackorderLevel     ;
 	protected		int                 	mPreorderLevel      ;
@@ -76,8 +78,9 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 		this.changed = true;
 	}
 	
-	public 	SkuInventory(int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, Product product, Platform platform)
+	public 	SkuInventory(String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, Product product, Platform platform)
 	{
+		setName(name);
 		setStockLevel(stockLevel);
 		setBackorderLevel(backorderLevel);
 		setPreorderLevel(preorderLevel);
@@ -94,6 +97,9 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 	
 	public void changeProperty(String property, String newValueExpr) {
      	
+		if(NAME_PROPERTY.equals(property)){
+			changeNameProperty(newValueExpr);
+		}
 		if(STOCK_LEVEL_PROPERTY.equals(property)){
 			changeStockLevelProperty(newValueExpr);
 		}
@@ -120,6 +126,21 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 	}
     
     
+	protected void changeNameProperty(String newValueExpr){
+		String oldValue = getName();
+		String newValue = parseString(newValueExpr);
+		if(equalsString(oldValue , newValue)){
+			return;//they can be both null, or exact the same object, this is much faster than equals function
+		}
+		//they are surely different each other
+		updateName(newValue);
+		this.onChangeProperty(NAME_PROPERTY, oldValue, newValue);
+		return;
+  
+	}
+			
+			
+			
 	protected void changeStockLevelProperty(String newValueExpr){
 		int oldValue = getStockLevel();
 		int newValue = parseInt(newValueExpr);
@@ -238,6 +259,19 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 	}
 	public SkuInventory updateId(String id){
 		this.mId = trimString(id);;
+		this.changed = true;
+		return this;
+	}
+	
+	
+	public void setName(String name){
+		this.mName = trimString(name);;
+	}
+	public String getName(){
+		return this.mName;
+	}
+	public SkuInventory updateName(String name){
+		this.mName = trimString(name);;
 		this.changed = true;
 		return this;
 	}
@@ -412,6 +446,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 		List<KeyValuePair> result =  super.keyValuePairOf();
 
 		appendKeyValuePair(result, ID_PROPERTY, getId());
+		appendKeyValuePair(result, NAME_PROPERTY, getName());
 		appendKeyValuePair(result, STOCK_LEVEL_PROPERTY, getStockLevel());
 		appendKeyValuePair(result, BACKORDER_LEVEL_PROPERTY, getBackorderLevel());
 		appendKeyValuePair(result, PREORDER_LEVEL_PROPERTY, getPreorderLevel());
@@ -437,6 +472,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 			SkuInventory dest =(SkuInventory)baseDest;
 		
 			dest.setId(getId());
+			dest.setName(getName());
 			dest.setStockLevel(getStockLevel());
 			dest.setBackorderLevel(getBackorderLevel());
 			dest.setPreorderLevel(getPreorderLevel());
@@ -458,6 +494,7 @@ public class SkuInventory extends BaseEntity implements  java.io.Serializable{
 
 		stringBuilder.append("SkuInventory{");
 		stringBuilder.append("\tid='"+getId()+"';");
+		stringBuilder.append("\tname='"+getName()+"';");
 		stringBuilder.append("\tstockLevel='"+getStockLevel()+"';");
 		stringBuilder.append("\tbackorderLevel='"+getBackorderLevel()+"';");
 		stringBuilder.append("\tpreorderLevel='"+getPreorderLevel()+"';");

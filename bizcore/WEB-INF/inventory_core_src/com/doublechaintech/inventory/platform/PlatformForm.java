@@ -166,6 +166,20 @@ public class PlatformForm extends BaseForm {
 	}
 
 
+	public PlatformForm nameFieldForSkuInventory(String parameterName, String initValue){
+		FormField field =  nameFromSkuInventory(parameterName, initValue);		
+		this.addFormField(field);
+		return this;
+	}
+	
+	public PlatformForm nameFieldForSkuInventory(String initValue){
+		return nameFieldForSkuInventory("name",initValue);
+	}
+	public PlatformForm nameFieldForSkuInventory(){
+		return nameFieldForSkuInventory("name","");
+	}
+
+
 	public PlatformForm stockLevelFieldForSkuInventory(String parameterName, String initValue){
 		FormField field =  stockLevelFromSkuInventory(parameterName, initValue);		
 		this.addFormField(field);

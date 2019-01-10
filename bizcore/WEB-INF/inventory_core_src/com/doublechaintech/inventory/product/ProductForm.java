@@ -166,6 +166,20 @@ public class ProductForm extends BaseForm {
 	}
 
 
+	public ProductForm nameFieldForSkuInventory(String parameterName, String initValue){
+		FormField field =  nameFromSkuInventory(parameterName, initValue);		
+		this.addFormField(field);
+		return this;
+	}
+	
+	public ProductForm nameFieldForSkuInventory(String initValue){
+		return nameFieldForSkuInventory("name",initValue);
+	}
+	public ProductForm nameFieldForSkuInventory(){
+		return nameFieldForSkuInventory("name","");
+	}
+
+
 	public ProductForm stockLevelFieldForSkuInventory(String parameterName, String initValue){
 		FormField field =  stockLevelFromSkuInventory(parameterName, initValue);		
 		this.addFormField(field);

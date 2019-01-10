@@ -14,6 +14,7 @@ public class SkuInventoryMapper extends BaseRowMapper<SkuInventory>{
 		SkuInventory skuInventory = getSkuInventory();		
 		 		
  		setId(skuInventory, rs, rowNumber); 		
+ 		setName(skuInventory, rs, rowNumber); 		
  		setStockLevel(skuInventory, rs, rowNumber); 		
  		setBackorderLevel(skuInventory, rs, rowNumber); 		
  		setPreorderLevel(skuInventory, rs, rowNumber); 		
@@ -42,6 +43,18 @@ public class SkuInventoryMapper extends BaseRowMapper<SkuInventory>{
 		}
 		
 		skuInventory.setId(id);
+	}
+		
+	protected void setName(SkuInventory skuInventory, ResultSet rs, int rowNumber) throws SQLException{
+	
+		//there will be issue when the type is double/int/long
+		String name = rs.getString(SkuInventoryTable.COLUMN_NAME);
+		if(name == null){
+			//do nothing when nothing found in database
+			return;
+		}
+		
+		skuInventory.setName(name);
 	}
 		
 	protected void setStockLevel(SkuInventory skuInventory, ResultSet rs, int rowNumber) throws SQLException{

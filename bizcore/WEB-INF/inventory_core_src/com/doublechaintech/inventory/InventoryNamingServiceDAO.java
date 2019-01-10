@@ -21,7 +21,7 @@ public class InventoryNamingServiceDAO extends CommonJDBCTemplateDAO {
 		namingTableMap = new HashMap<String, String[]>();
 		namingTableMap.put("Platform", new String[]{"platform_data","name"});
 		namingTableMap.put("Product", new String[]{"product_data","name"});
-		namingTableMap.put("SkuInventory", new String[]{"sku_inventory_data","status"});
+		namingTableMap.put("SkuInventory", new String[]{"sku_inventory_data","name"});
 		namingTableMap.put("UserDomain", new String[]{"user_domain_data","name"});
 		namingTableMap.put("UserWhiteList", new String[]{"user_white_list_data","user_identity"});
 		namingTableMap.put("SecUser", new String[]{"sec_user_data","login"});

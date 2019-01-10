@@ -122,6 +122,15 @@ public class InventoryChecker extends BaseChecker{
 		return this;
 	}	 			
 
+	public static final String  NAME_OF_SKU_INVENTORY ="sku_inventory.name";
+	public InventoryChecker checkNameOfSkuInventory(String name)
+	{
+		
+	 	checkStringLengthRange(name,3, 40,NAME_OF_SKU_INVENTORY ); 		
+		
+		return this;
+	}	 			
+
 	public static final String  STOCK_LEVEL_OF_SKU_INVENTORY ="sku_inventory.stock_level";
 	public InventoryChecker checkStockLevelOfSkuInventory(int stockLevel)
 	{

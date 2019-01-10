@@ -97,6 +97,14 @@ public class InventoryCheckerManager extends BaseManagerImpl {
 		
 	}	 			
 	
+	public static final String  NAME_OF_SKU_INVENTORY ="sku_inventory.name";
+	protected void checkNameOfSkuInventory(InventoryUserContext userContext, String name, List<Message> messageList)
+	{
+		
+	 	checkStringLengthRange(name,3, 40,NAME_OF_SKU_INVENTORY, messageList); 		
+		
+	}	 			
+	
 	public static final String  STOCK_LEVEL_OF_SKU_INVENTORY ="sku_inventory.stock_level";
 	protected void checkStockLevelOfSkuInventory(InventoryUserContext userContext, int stockLevel, List<Message> messageList)
 	{

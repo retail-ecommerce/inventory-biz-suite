@@ -130,7 +130,7 @@ public class ProductTokens extends CommonTokens{
 	}
 	
 	public ProductTokens searchAllTextOfSkuInventoryList(String verb, String value){	
-		String field = "id|status";
+		String field = "id|name|status";
 		addSearchMoreOptions(SKU_INVENTORY_LIST,skuInventoryListSearchCounter++, field, verb, value);
 		return this;
 	}

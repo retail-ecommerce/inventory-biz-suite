@@ -12,7 +12,7 @@ public interface SkuInventoryManager{
 
 		
 
-	public SkuInventory createSkuInventory(InventoryUserContext userContext, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String platformId) throws Exception;	
+	public SkuInventory createSkuInventory(InventoryUserContext userContext, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String productId, String platformId) throws Exception;	
 	public SkuInventory updateSkuInventory(InventoryUserContext userContext,String skuInventoryId, int skuInventoryVersion, String property, String newValueExpr,String [] tokensExpr) throws Exception;
 	public SkuInventory loadSkuInventory(InventoryUserContext userContext, String skuInventoryId, String [] tokensExpr) throws Exception;
 	public SkuInventory internalSaveSkuInventory(InventoryUserContext userContext, SkuInventory skuInventory) throws Exception;

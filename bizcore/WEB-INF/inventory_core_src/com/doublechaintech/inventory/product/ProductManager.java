@@ -28,9 +28,9 @@ public interface ProductManager{
 	/*======================================================DATA MAINTENANCE===========================================================*/
 	
 
-	//public  SkuInventoryManager getSkuInventoryManager(InventoryUserContext userContext, String productId, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String platformId ,String [] tokensExpr)  throws Exception;
+	//public  SkuInventoryManager getSkuInventoryManager(InventoryUserContext userContext, String productId, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String platformId ,String [] tokensExpr)  throws Exception;
 	
-	public  Product addSkuInventory(InventoryUserContext userContext, String productId, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String platformId , String [] tokensExpr)  throws Exception;
+	public  Product addSkuInventory(InventoryUserContext userContext, String productId, String name, int stockLevel, int backorderLevel, int preorderLevel, int stockThreshold, int backorderThreshol, int preorderThreshol, String status, String platformId , String [] tokensExpr)  throws Exception;
 	public  Product removeSkuInventory(InventoryUserContext userContext, String productId, String skuInventoryId, int skuInventoryVersion,String [] tokensExpr)  throws Exception;
 	public  Product updateSkuInventory(InventoryUserContext userContext, String productId, String skuInventoryId, int skuInventoryVersion, String property, String newValueExpr,String [] tokensExpr)  throws Exception;
 

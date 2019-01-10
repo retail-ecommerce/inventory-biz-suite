@@ -77,7 +77,7 @@ public class InventoryUserContextImpl extends UserContextImpl implements Invento
 	public Map<String,String> getLocaleMap(){
 		
 		init();
-		return chineseMap;
+		return englishMap;
 		
 	}
 	
