@@ -129,6 +129,7 @@ componentDidMount() {
       
      
 		pushIfNotNull(paramList,this.buildStringSearchParameters(fieldsValue,'contains', 'id'))
+		pushIfNotNull(paramList,this.buildStringSearchParameters(fieldsValue,'contains', 'name'))
 		pushIfNotNull(paramList,this.buildStringSearchParameters(fieldsValue,'contains', 'status'))
 		pushIfNotNull(paramList,this.buildStringSearchParameters(fieldsValue,'eq', 'product'))
 		pushIfNotNull(paramList,this.buildStringSearchParameters(fieldsValue,'eq', 'platform'))
@@ -196,9 +197,9 @@ componentDidMount() {
        </Col>
 
        <Col md={8} sm={24}>
-         <FormItem label="Status">
-           {getFieldDecorator('status')(
-             <Input placeholder="请输入Status" />
+         <FormItem label="Name">
+           {getFieldDecorator('name')(
+             <Input placeholder="请输入Name" />
            )}
          </FormItem>
        </Col>
@@ -246,6 +247,14 @@ componentDidMount() {
             <FormItem label="Id">
               {getFieldDecorator('id')(
                 <Input placeholder="请输入Id" />
+              )}
+            </FormItem>
+          </Col>
+
+          <Col md={8} sm={24}>
+            <FormItem label="Name">
+              {getFieldDecorator('name')(
+                <Input placeholder="请输入Name" />
               )}
             </FormItem>
           </Col>

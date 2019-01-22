@@ -25,6 +25,7 @@
 	<table name="sku_inventory_data">
 		<fields>
 			<field name="id" nullable="false" type="string" checkType="StringLengthRange" min="5" max="64" description="Id" />
+			<field name="name" type="string" checkType="StringLengthRange" min="3" max="40" description="Name" />
 			<field name="stock_level" type="int" checkType="IntegerRange" min="0" max="1000" description="Stock Level" />
 			<field name="backorder_level" type="int" checkType="IntegerRange" min="0" max="1000" description="Backorder Level" />
 			<field name="preorder_level" type="int" checkType="IntegerRange" min="0" max="1000" description="Preorder Level" />

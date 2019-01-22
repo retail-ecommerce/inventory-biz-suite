@@ -80,6 +80,7 @@ const internalSummaryOf = (skuInventory,targetComponent) =>{
 	return (
 	<DescriptionList className={styles.headerList} size="small" col="4">
 <Description term="Id">{skuInventory.id}</Description> 
+<Description term="Name">{skuInventory.name}</Description> 
 <Description term="Stock Level">{skuInventory.stockLevel}</Description> 
 <Description term="Backorder Level">{skuInventory.backorderLevel}</Description> 
 <Description term="Preorder Level">{skuInventory.preorderLevel}</Description> 

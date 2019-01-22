@@ -17,12 +17,13 @@ const { TextArea } = Input
 const testValues = {};
 /*
 const testValues = {
-  stockLevel: '849',
-  backorderLevel: '783',
-  preorderLevel: '906',
-  stockThreshold: '897',
-  backorderThreshol: '996',
-  preorderThreshol: '864',
+  name: 'Blue Jeans',
+  stockLevel: '790',
+  backorderLevel: '877',
+  preorderLevel: '767',
+  stockThreshold: '909',
+  backorderThreshol: '893',
+  preorderThreshol: '844',
   status: 'IN_STOCK',
   productId: 'P000001',
   platformId: 'P000001',
@@ -207,6 +208,16 @@ class SkuInventoryCreateForm extends Component {
         <Card title="基础信息" className={styles.card} bordered={false}>
           <Form >
             <Row gutter={16}>
+
+              <Col lg={12} md={12} sm={24}>
+                <Form.Item label={fieldLabels.name} {...formItemLayout}>
+                  {getFieldDecorator('name', {
+                    rules: [{ required: true, message: '请输入Name' }],
+                  })(
+                    <Input placeholder="请输入Name" />
+                  )}
+                </Form.Item>
+              </Col>
 
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.stockLevel} {...formItemLayout}>

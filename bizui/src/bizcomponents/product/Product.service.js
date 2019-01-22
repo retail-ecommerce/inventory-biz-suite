@@ -39,14 +39,14 @@ const transferToAnotherPlatform = (id, parameters) => {
 
 
 const addSkuInventory = (targetObjectId, parameters) => {
-  const url = `${PREFIX}productManager/addSkuInventory/productId/stockLevel/backorderLevel/preorderLevel/stockThreshold/backorderThreshol/preorderThreshol/status/platformId/tokensExpr/`
+  const url = `${PREFIX}productManager/addSkuInventory/productId/name/stockLevel/backorderLevel/preorderLevel/stockThreshold/backorderThreshol/preorderThreshol/status/platformId/tokensExpr/`
   const productId = targetObjectId
   const requestParameters = { ...parameters, productId, tokensExpr: 'none' }
   return postForm({ url,requestParameters})
 }
 
 const updateSkuInventory = (targetObjectId, parameters) => {
-  const url = `${PREFIX}productManager/updateSkuInventoryProperties/productId/id/stockLevel/backorderLevel/preorderLevel/stockThreshold/backorderThreshol/preorderThreshol/status/tokensExpr/`
+  const url = `${PREFIX}productManager/updateSkuInventoryProperties/productId/id/name/stockLevel/backorderLevel/preorderLevel/stockThreshold/backorderThreshol/preorderThreshol/status/tokensExpr/`
   const productId = targetObjectId
   const requestParameters = { ...parameters, productId, tokensExpr: 'none' }
   return postForm({ url,requestParameters})

@@ -1,4 +1,4 @@
--- BUILD WITH MODEL TIME 190108T1830
+-- BUILD WITH MODEL TIME 190110T0110
 drop database  if exists inventory;
 create database inventory;
 alter  database inventory  character set = utf8mb4  collate = utf8mb4_unicode_ci; -- 支持表情符号
@@ -28,6 +28,7 @@ create table product_data (
 drop table  if exists sku_inventory_data;
 create table sku_inventory_data (
 	id                  	varchar(64)          not null            comment 'Id',
+	name                	varchar(40)                              comment 'Name',
 	stock_level         	int                                      comment 'Stock Level',
 	backorder_level     	int                                      comment 'Backorder Level',
 	preorder_level      	int                                      comment 'Preorder Level',
@@ -221,14 +222,14 @@ create table form_action_data (
 insert into platform_data values ('P000001','Chain eComerce Platform','new generation of eCommerce platform based on opensource and modern tech','V1.0','1');
 
 	
-insert into product_data values ('P000001','The PRODUCT','The primary site for show the concept','P000001','2018-12-20 00:48:18','1');
-insert into product_data values ('P000002','The PRODUCT0002','The primary site for show the concept0002','P000001','2018-12-21 03:20:05','1');
+insert into product_data values ('P000001','The PRODUCT','The primary site for show the concept','P000001','2019-01-03 06:34:38','1');
+insert into product_data values ('P000002','The PRODUCT0002','The primary site for show the concept0002','P000001','2018-12-22 09:35:11','1');
 
 	
-insert into sku_inventory_data values ('SI000001','701','967','929','797','774','905','IN_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000002','819','881','941','907','851','881','OUT_OF_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000003','895','709','994','727','722','987','IN_STOCK','P000002','P000001','1');
-insert into sku_inventory_data values ('SI000004','737','802','920','970','843','718','OUT_OF_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000001','Blue Jeans','963','884','731','994','968','862','IN_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000002','Blue Jeans0002','862','746','983','798','737','770','OUT_OF_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000003','Blue Jeans0003','924','749','826','948','919','833','IN_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000004','Blue Jeans0004','799','710','955','717','861','968','OUT_OF_STOCK','P000002','P000001','1');
 
 	
 insert into user_domain_data values ('UD000001','用户区域','1');
@@ -238,11 +239,11 @@ insert into user_white_list_data values ('UWL000001','clariones','tester;ios-spo
 insert into user_white_list_data values ('UWL000002','13808188512','tester;ios-spokesperson0002','UD000001','1');
 
 	
-insert into sec_user_data values ('SU000001','login','13900000001','','C183EC89F92A462CF45B95504792EC4625E847C90536EEFE512D1C9DB8602E95','0','2018-12-25 22:11:05','2019-01-01 13:29:23','UD000001',NULL,'BLOCKED','1');
-insert into sec_user_data values ('SU000002','login0002','13900000002','suddy_chang@163.com','AC2F95628244C6975EB2C36942EA879ED93D93F5895EF3157733E4629FA86B92','9999999','2018-12-24 02:05:11','2019-01-06 17:23:53','UD000001',NULL,'BLOCKED0002','1');
+insert into sec_user_data values ('SU000001','login','13900000001','','C183EC89F92A462CF45B95504792EC4625E847C90536EEFE512D1C9DB8602E95','0','2019-01-03 13:18:53','2019-01-03 03:49:47','UD000001',NULL,'BLOCKED','1');
+insert into sec_user_data values ('SU000002','login0002','13900000002','suddy_chang@163.com','AC2F95628244C6975EB2C36942EA879ED93D93F5895EF3157733E4629FA86B92','9999999','2018-12-29 03:13:35','2019-01-01 13:36:43','UD000001',NULL,'BLOCKED0002','1');
 
 	
-insert into sec_user_blocking_data values ('SUB000001','currentUser()','2018-12-18 22:23:09','这个用户多次发送违反社区的帖子，现在把他给屏蔽了','1');
+insert into sec_user_blocking_data values ('SUB000001','currentUser()','2019-01-04 18:40:38','这个用户多次发送违反社区的帖子，现在把他给屏蔽了','1');
 
 	
 insert into user_app_data values ('UA000001','审车平台','SU000001','users',1,'MXWR','CarInspectionPlatform','CIP000001','/link/to/app','1');
@@ -273,10 +274,10 @@ insert into object_access_data values ('OA000007','控制访问列表10007','Fra
 insert into object_access_data values ('OA000008','控制访问列表10008','AccountSet','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','UA000006','1');
 
 	
-insert into login_history_data values ('LH000001','2018-12-24 22:33:02','192.168.1.1','登陆成功','SU000001','1');
-insert into login_history_data values ('LH000002','2019-01-02 19:09:35','192.168.1.2','登陆成功0002','SU000001','1');
-insert into login_history_data values ('LH000003','2018-12-28 06:30:15','192.168.1.1','登陆成功0003','SU000002','1');
-insert into login_history_data values ('LH000004','2018-12-30 01:57:28','192.168.1.2','登陆成功0004','SU000002','1');
+insert into login_history_data values ('LH000001','2018-12-22 16:40:48','192.168.1.1','登陆成功','SU000001','1');
+insert into login_history_data values ('LH000002','2019-01-04 11:38:15','192.168.1.2','登陆成功0002','SU000001','1');
+insert into login_history_data values ('LH000003','2018-12-24 20:41:28','192.168.1.1','登陆成功0003','SU000002','1');
+insert into login_history_data values ('LH000004','2018-12-31 12:45:41','192.168.1.2','登陆成功0004','SU000002','1');
 
 	
 insert into generic_form_data values ('GF000001','登记输入单','姓名就是你身份证上的名字','1');
@@ -430,12 +431,15 @@ delete from user_app_data;
 
 */
 
-insert into sec_user_data values('SU000001','user000001','13900000001','1000001@qq.com','258D9BB89BBC1F2A6CDDD3A4CB300E6CD9B83F3FC9984619DF1A59F6051F1F44','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into sec_user_data values('SU000001','u000001','13900000001','1000001@qq.com','258D9BB89BBC1F2A6CDDD3A4CB300E6CD9B83F3FC9984619DF1A59F6051F1F44','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
 insert into user_app_data values('UA000001','Platform','SU000001','at',1,'MXWR','Platform','P000001','/link/to/app','1'); -- REFER COUNT: 2
-insert into user_app_data values('UA000002','安全中心','SU000001','lock',1,'MXWR','SecUser','SU000001','/link/to/app','1'); -- REFER COUNT: 2
-insert into sec_user_data values('SU000002','user000002','13900000002','1000002@qq.com','7FEABCC19D638787655F9FFC2C22755D5771184D85D000147D643D22F6617F7B','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into user_app_data values('UA000002','My Account','SU000001','lock',1,'MXWR','SecUser','SU000001','/link/to/app','1'); -- REFER COUNT: 2
+insert into sec_user_data values('SU000002','u000002','13900000002','1000002@qq.com','7FEABCC19D638787655F9FFC2C22755D5771184D85D000147D643D22F6617F7B','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
 insert into user_app_data values('UA000003','User Domain','SU000002','user',1,'MXWR','UserDomain','UD000001','/link/to/app','1'); -- REFER COUNT: 2
-insert into user_app_data values('UA000004','安全中心','SU000002','lock',1,'MXWR','SecUser','SU000002','/link/to/app','1'); -- REFER COUNT: 2
+insert into user_app_data values('UA000004','My Account','SU000002','lock',1,'MXWR','SecUser','SU000002','/link/to/app','1'); -- REFER COUNT: 2
+insert into sec_user_data values('SU000003','u000003','13900000003','1000003@qq.com','8169C17063461B0B0CC210CE5EF682E9517A19170F7DCA3C76170229D765DE7A','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into user_app_data values('UA000005','Sec User Blocking','SU000003','user',1,'MXWR','SecUserBlocking','SUB000001','/link/to/app','1'); -- REFER COUNT: 1
+insert into user_app_data values('UA000006','My Account','SU000003','lock',1,'MXWR','SecUser','SU000003','/link/to/app','1'); -- REFER COUNT: 1
 
 
 
@@ -445,6 +449,7 @@ insert into user_app_data values('UA000004','安全中心','SU000002','lock',1,'
 | ------------- |:-------------:|:-------------------:|
 |Platform|13900000001|DoubleChain!y1|
 |User Domain|13900000002|DoubleChain!y1|
+|Sec User Blocking|13900000003|DoubleChain!y1|
 
 
 */

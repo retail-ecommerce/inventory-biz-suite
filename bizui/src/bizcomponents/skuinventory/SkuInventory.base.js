@@ -68,6 +68,7 @@ const renderReferenceCell=(value, record)=>{
 
 const displayColumns = [
   { title: 'Id', debugtype: 'string', dataIndex: 'id', width: '20',render: (text, record)=>renderTextCell(text,record) },
+  { title: 'Name', debugtype: 'string', dataIndex: 'name', width: '14',render: (text, record)=>renderTextCell(text,record) },
   { title: 'Stock Level', debugtype: 'int', dataIndex: 'stockLevel', width: '8',render: (text, record)=>renderTextCell(text,record) },
   { title: 'Backorder Level', debugtype: 'int', dataIndex: 'backorderLevel', width: '8',render: (text, record)=>renderTextCell(text,record) },
   { title: 'Preorder Level', debugtype: 'int', dataIndex: 'preorderLevel', width: '8',render: (text, record)=>renderTextCell(text,record) },
@@ -82,6 +83,7 @@ const displayColumns = [
 
 const fieldLabels = {
   id: 'Id',
+  name: 'Name',
   stockLevel: 'Stock Level',
   backorderLevel: 'Backorder Level',
   preorderLevel: 'Preorder Level',
