@@ -222,28 +222,28 @@ create table form_action_data (
 insert into platform_data values ('P000001','Chain eComerce Platform','new generation of eCommerce platform based on opensource and modern tech','V1.0','1');
 
 	
-insert into product_data values ('P000001','The PRODUCT','The primary site for show the concept','P000001','2019-01-16 15:58:14','1');
-insert into product_data values ('P000002','The PRODUCT0002','The primary site for show the concept0002','P000001','2019-01-22 08:49:50','1');
-insert into product_data values ('P000003','The PRODUCT0003','The primary site for show the concept0003','P000001','2019-01-16 15:24:58','1');
-insert into product_data values ('P000004','The PRODUCT0004','The primary site for show the concept0004','P000001','2019-01-06 11:15:46','1');
+insert into product_data values ('P000001','The PRODUCT','The primary site for show the concept','P000001','2019-01-20 17:32:33','1');
+insert into product_data values ('P000002','The PRODUCT0002','The primary site for show the concept0002','P000001','2019-01-19 16:12:52','1');
+insert into product_data values ('P000003','The PRODUCT0003','The primary site for show the concept0003','P000001','2019-01-16 02:26:47','1');
+insert into product_data values ('P000004','The PRODUCT0004','The primary site for show the concept0004','P000001','2019-01-13 16:07:48','1');
 
 	
-insert into sku_inventory_data values ('SI000001','Blue Jeans','785','832','960','841','744','928','IN_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000002','Blue Jeans0002','751','873','899','791','747','719','OUT_OF_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000003','Blue Jeans0003','740','790','791','842','929','766','IN_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000004','Blue Jeans0004','707','744','703','864','726','907','OUT_OF_STOCK','P000001','P000001','1');
-insert into sku_inventory_data values ('SI000005','Blue Jeans0005','771','733','703','998','807','957','IN_STOCK','P000002','P000001','1');
-insert into sku_inventory_data values ('SI000006','Blue Jeans0006','736','840','760','906','962','805','OUT_OF_STOCK','P000002','P000001','1');
-insert into sku_inventory_data values ('SI000007','Blue Jeans0007','921','787','919','928','750','775','IN_STOCK','P000002','P000001','1');
-insert into sku_inventory_data values ('SI000008','Blue Jeans0008','923','969','807','753','913','995','OUT_OF_STOCK','P000002','P000001','1');
-insert into sku_inventory_data values ('SI000009','Blue Jeans0009','968','884','829','909','801','807','IN_STOCK','P000003','P000001','1');
-insert into sku_inventory_data values ('SI000010','Blue Jeans0010','815','861','724','736','900','731','OUT_OF_STOCK','P000003','P000001','1');
-insert into sku_inventory_data values ('SI000011','Blue Jeans0011','844','990','918','827','875','876','IN_STOCK','P000003','P000001','1');
-insert into sku_inventory_data values ('SI000012','Blue Jeans0012','996','819','721','823','711','732','OUT_OF_STOCK','P000003','P000001','1');
-insert into sku_inventory_data values ('SI000013','Blue Jeans0013','881','906','859','711','992','991','IN_STOCK','P000004','P000001','1');
-insert into sku_inventory_data values ('SI000014','Blue Jeans0014','837','810','997','713','991','788','OUT_OF_STOCK','P000004','P000001','1');
-insert into sku_inventory_data values ('SI000015','Blue Jeans0015','747','736','774','944','901','713','IN_STOCK','P000004','P000001','1');
-insert into sku_inventory_data values ('SI000016','Blue Jeans0016','815','914','820','870','895','808','OUT_OF_STOCK','P000004','P000001','1');
+insert into sku_inventory_data values ('SI000001','Blue Jeans','789','812','959','870','739','974','IN_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000002','Blue Jeans0002','792','955','801','821','844','915','OUT_OF_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000003','Blue Jeans0003','952','990','971','904','865','744','IN_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000004','Blue Jeans0004','760','962','786','956','735','987','OUT_OF_STOCK','P000001','P000001','1');
+insert into sku_inventory_data values ('SI000005','Blue Jeans0005','820','767','919','980','887','973','IN_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000006','Blue Jeans0006','790','710','728','746','925','806','OUT_OF_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000007','Blue Jeans0007','735','887','748','902','983','952','IN_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000008','Blue Jeans0008','894','774','704','875','930','761','OUT_OF_STOCK','P000002','P000001','1');
+insert into sku_inventory_data values ('SI000009','Blue Jeans0009','767','818','739','786','803','956','IN_STOCK','P000003','P000001','1');
+insert into sku_inventory_data values ('SI000010','Blue Jeans0010','712','881','802','982','970','713','OUT_OF_STOCK','P000003','P000001','1');
+insert into sku_inventory_data values ('SI000011','Blue Jeans0011','791','788','953','964','933','926','IN_STOCK','P000003','P000001','1');
+insert into sku_inventory_data values ('SI000012','Blue Jeans0012','796','702','886','714','838','708','OUT_OF_STOCK','P000003','P000001','1');
+insert into sku_inventory_data values ('SI000013','Blue Jeans0013','746','964','965','817','710','774','IN_STOCK','P000004','P000001','1');
+insert into sku_inventory_data values ('SI000014','Blue Jeans0014','728','808','813','718','947','852','OUT_OF_STOCK','P000004','P000001','1');
+insert into sku_inventory_data values ('SI000015','Blue Jeans0015','948','879','911','720','910','891','IN_STOCK','P000004','P000001','1');
+insert into sku_inventory_data values ('SI000016','Blue Jeans0016','760','780','713','823','788','779','OUT_OF_STOCK','P000004','P000001','1');
 
 	
 insert into user_domain_data values ('UD000001','用户区域','1');
@@ -255,13 +255,13 @@ insert into user_white_list_data values ('UWL000003','clariones','tester;ios-spo
 insert into user_white_list_data values ('UWL000004','13808188512','tester;ios-spokesperson0004','UD000001','1');
 
 	
-insert into sec_user_data values ('SU000001','login','13900000001','','C183EC89F92A462CF45B95504792EC4625E847C90536EEFE512D1C9DB8602E95','0','2019-01-08 16:54:03','2019-01-21 22:06:21','UD000001',NULL,'BLOCKED','1');
-insert into sec_user_data values ('SU000002','login0002','13900000002','suddy_chang@163.com','AC2F95628244C6975EB2C36942EA879ED93D93F5895EF3157733E4629FA86B92','9999999','2019-01-10 12:39:28','2019-01-11 22:08:39','UD000001',NULL,'BLOCKED0002','1');
-insert into sec_user_data values ('SU000003','login0003','13900000003','','1A39AE05E011CF4B6ADE19307698831F4303CEB3FF5A9E21EEC0B21FB19B1050','0','2019-01-09 02:01:33','2019-01-14 05:21:27','UD000001',NULL,'BLOCKED0003','1');
-insert into sec_user_data values ('SU000004','login0004','13900000004','suddy_chang@163.com','331D0B81C261072AB3E01D2D09A3D1F9B03F1E5F095D6BF7284F32BF85135D59','9999999','2019-01-08 13:27:37','2019-01-09 05:50:28','UD000001',NULL,'BLOCKED0004','1');
+insert into sec_user_data values ('SU000001','login','13900000001','','C183EC89F92A462CF45B95504792EC4625E847C90536EEFE512D1C9DB8602E95','0','2019-01-21 13:09:23','2019-01-08 22:30:18','UD000001',NULL,'BLOCKED','1');
+insert into sec_user_data values ('SU000002','login0002','13900000002','suddy_chang@163.com','AC2F95628244C6975EB2C36942EA879ED93D93F5895EF3157733E4629FA86B92','9999999','2019-01-18 14:57:54','2019-01-22 22:49:19','UD000001',NULL,'BLOCKED0002','1');
+insert into sec_user_data values ('SU000003','login0003','13900000003','','1A39AE05E011CF4B6ADE19307698831F4303CEB3FF5A9E21EEC0B21FB19B1050','0','2019-01-08 21:04:48','2019-01-19 01:20:25','UD000001',NULL,'BLOCKED0003','1');
+insert into sec_user_data values ('SU000004','login0004','13900000004','suddy_chang@163.com','331D0B81C261072AB3E01D2D09A3D1F9B03F1E5F095D6BF7284F32BF85135D59','9999999','2019-01-16 00:15:03','2019-01-07 17:44:34','UD000001',NULL,'BLOCKED0004','1');
 
 	
-insert into sec_user_blocking_data values ('SUB000001','currentUser()','2019-01-24 11:33:56','这个用户多次发送违反社区的帖子，现在把他给屏蔽了','1');
+insert into sec_user_blocking_data values ('SUB000001','currentUser()','2019-01-05 09:27:09','这个用户多次发送违反社区的帖子，现在把他给屏蔽了','1');
 
 	
 insert into user_app_data values ('UA000001','审车平台','SU000001','users',1,'MXWR','CarInspectionPlatform','CIP000001','/link/to/app','1');
@@ -414,22 +414,22 @@ insert into object_access_data values ('OA000063','控制访问列表10063','Fra
 insert into object_access_data values ('OA000064','控制访问列表10064','AccountSet','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','levelOneCategoryList','UA000016','1');
 
 	
-insert into login_history_data values ('LH000001','2019-01-15 12:36:30','192.168.1.1','登陆成功','SU000001','1');
-insert into login_history_data values ('LH000002','2019-01-23 06:34:01','192.168.1.2','登陆成功0002','SU000001','1');
-insert into login_history_data values ('LH000003','2019-01-10 05:21:11','192.168.1.1','登陆成功0003','SU000001','1');
-insert into login_history_data values ('LH000004','2019-01-22 14:14:23','192.168.1.2','登陆成功0004','SU000001','1');
-insert into login_history_data values ('LH000005','2019-01-08 03:19:58','192.168.1.1','登陆成功0005','SU000002','1');
-insert into login_history_data values ('LH000006','2019-01-06 20:15:29','192.168.1.2','登陆成功0006','SU000002','1');
-insert into login_history_data values ('LH000007','2019-01-24 18:05:42','192.168.1.1','登陆成功0007','SU000002','1');
-insert into login_history_data values ('LH000008','2019-01-13 19:30:18','192.168.1.2','登陆成功0008','SU000002','1');
-insert into login_history_data values ('LH000009','2019-01-22 23:11:30','192.168.1.1','登陆成功0009','SU000003','1');
-insert into login_history_data values ('LH000010','2019-01-13 11:43:14','192.168.1.2','登陆成功0010','SU000003','1');
-insert into login_history_data values ('LH000011','2019-01-22 12:47:39','192.168.1.1','登陆成功0011','SU000003','1');
-insert into login_history_data values ('LH000012','2019-01-05 17:07:56','192.168.1.2','登陆成功0012','SU000003','1');
-insert into login_history_data values ('LH000013','2019-01-11 19:43:37','192.168.1.1','登陆成功0013','SU000004','1');
-insert into login_history_data values ('LH000014','2019-01-12 02:28:14','192.168.1.2','登陆成功0014','SU000004','1');
-insert into login_history_data values ('LH000015','2019-01-15 12:57:33','192.168.1.1','登陆成功0015','SU000004','1');
-insert into login_history_data values ('LH000016','2019-01-11 12:59:56','192.168.1.2','登陆成功0016','SU000004','1');
+insert into login_history_data values ('LH000001','2019-01-22 16:38:21','192.168.1.1','登陆成功','SU000001','1');
+insert into login_history_data values ('LH000002','2019-01-17 18:25:50','192.168.1.2','登陆成功0002','SU000001','1');
+insert into login_history_data values ('LH000003','2019-01-12 21:36:21','192.168.1.1','登陆成功0003','SU000001','1');
+insert into login_history_data values ('LH000004','2019-01-09 17:02:40','192.168.1.2','登陆成功0004','SU000001','1');
+insert into login_history_data values ('LH000005','2019-01-12 13:38:48','192.168.1.1','登陆成功0005','SU000002','1');
+insert into login_history_data values ('LH000006','2019-01-08 18:34:08','192.168.1.2','登陆成功0006','SU000002','1');
+insert into login_history_data values ('LH000007','2019-01-04 21:39:01','192.168.1.1','登陆成功0007','SU000002','1');
+insert into login_history_data values ('LH000008','2019-01-07 08:04:53','192.168.1.2','登陆成功0008','SU000002','1');
+insert into login_history_data values ('LH000009','2019-01-06 07:27:45','192.168.1.1','登陆成功0009','SU000003','1');
+insert into login_history_data values ('LH000010','2019-01-17 05:29:09','192.168.1.2','登陆成功0010','SU000003','1');
+insert into login_history_data values ('LH000011','2019-01-06 12:53:36','192.168.1.1','登陆成功0011','SU000003','1');
+insert into login_history_data values ('LH000012','2019-01-05 23:58:33','192.168.1.2','登陆成功0012','SU000003','1');
+insert into login_history_data values ('LH000013','2019-01-25 03:29:40','192.168.1.1','登陆成功0013','SU000004','1');
+insert into login_history_data values ('LH000014','2019-01-14 17:31:59','192.168.1.2','登陆成功0014','SU000004','1');
+insert into login_history_data values ('LH000015','2019-01-25 14:40:26','192.168.1.1','登陆成功0015','SU000004','1');
+insert into login_history_data values ('LH000016','2019-01-22 19:11:30','192.168.1.2','登陆成功0016','SU000004','1');
 
 	
 insert into generic_form_data values ('GF000001','登记输入单','姓名就是你身份证上的名字','1');
@@ -589,13 +589,13 @@ delete from user_app_data;
 
 */
 
-insert into sec_user_data values('SU000001','u000001','13900000001','1000001@qq.com','258D9BB89BBC1F2A6CDDD3A4CB300E6CD9B83F3FC9984619DF1A59F6051F1F44','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into sec_user_data values('SU000001','User000001','13900000001','1000001@qq.com','258D9BB89BBC1F2A6CDDD3A4CB300E6CD9B83F3FC9984619DF1A59F6051F1F44','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
 insert into user_app_data values('UA000001','Platform','SU000001','at',1,'MXWR','Platform','P000001','/link/to/app','1'); -- REFER COUNT: 2
 insert into user_app_data values('UA000002','My Account','SU000001','lock',1,'MXWR','SecUser','SU000001','/link/to/app','1'); -- REFER COUNT: 2
-insert into sec_user_data values('SU000002','u000002','13900000002','1000002@qq.com','7FEABCC19D638787655F9FFC2C22755D5771184D85D000147D643D22F6617F7B','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into sec_user_data values('SU000002','User000002','13900000002','1000002@qq.com','7FEABCC19D638787655F9FFC2C22755D5771184D85D000147D643D22F6617F7B','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
 insert into user_app_data values('UA000003','User Domain','SU000002','user',1,'MXWR','UserDomain','UD000001','/link/to/app','1'); -- REFER COUNT: 2
 insert into user_app_data values('UA000004','My Account','SU000002','lock',1,'MXWR','SecUser','SU000002','/link/to/app','1'); -- REFER COUNT: 2
-insert into sec_user_data values('SU000003','u000003','13900000003','1000003@qq.com','8169C17063461B0B0CC210CE5EF682E9517A19170F7DCA3C76170229D765DE7A','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
+insert into sec_user_data values('SU000003','User000003','13900000003','1000003@qq.com','8169C17063461B0B0CC210CE5EF682E9517A19170F7DCA3C76170229D765DE7A','9292993','2019-09-09 09:09:09','2019-09-09 09:09:09','UD000001',NULL,'INIT',1);
 insert into user_app_data values('UA000005','Sec User Blocking','SU000003','user',1,'MXWR','SecUserBlocking','SUB000001','/link/to/app','1'); -- REFER COUNT: 1
 insert into user_app_data values('UA000006','My Account','SU000003','lock',1,'MXWR','SecUser','SU000003','/link/to/app','1'); -- REFER COUNT: 1
 
