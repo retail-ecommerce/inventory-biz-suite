@@ -9,7 +9,7 @@ import styles from './SkuInventory.createform.less'
 import {mapBackToImageValues, mapFromImageValues} from '../../axios/tools'
 import GlobalComponents from '../../custcomponents';
 import SkuInventoryBase from './SkuInventory.base'
-
+import appLocaleName from '../../common/Locale.tool'
 const { Option } = Select
 const { RangePicker } = DatePicker
 const { TextArea } = Input
@@ -18,12 +18,12 @@ const testValues = {};
 /*
 const testValues = {
   name: 'Blue Jeans',
-  stockLevel: '790',
-  backorderLevel: '877',
-  preorderLevel: '767',
-  stockThreshold: '909',
-  backorderThreshol: '893',
-  preorderThreshol: '844',
+  stockLevel: '866',
+  backorderLevel: '779',
+  preorderLevel: '844',
+  stockThreshold: '996',
+  backorderThreshol: '820',
+  preorderThreshol: '876',
   status: 'IN_STOCK',
   productId: 'P000001',
   platformId: 'P000001',
@@ -75,7 +75,7 @@ class SkuInventoryCreateForm extends Component {
   render() {
     const { form, dispatch, submitting, role } = this.props
     const { convertedImagesValues } = this.state
-
+	const userContext = null
     const { getFieldDecorator, validateFieldsAndScroll, getFieldsError } = form
     const {fieldLabels} = SkuInventoryBase
     const {SkuInventoryService} = GlobalComponents
@@ -124,9 +124,10 @@ class SkuInventoryCreateForm extends Component {
     
     const goback = () => {
       const { owner } = this.props
+     
       dispatch({
         type: `${owner.type}/goback`,
-        payload: { id: owner.id, type: 'skuInventory',listName:'Sku Inventory列表' },
+        payload: { id: owner.id, type: 'skuInventory',listName:appLocaleName(userContext,"List") },
       })
     }
     const errors = getFieldsError()
@@ -157,7 +158,7 @@ class SkuInventoryCreateForm extends Component {
       return (
         <span className={styles.errorIcon}>
           <Popover
-            title="表单校验信息"
+            title={appLocaleName(userContext,"FieldValidateInfo")}
             content={errorList}
             overlayClassName={styles.errorPopover}
             trigger="click"
@@ -201,18 +202,18 @@ class SkuInventoryCreateForm extends Component {
     }
     return (
       <PageHeaderLayout
-        title="新建一个Sku Inventory"
-        content="新建一个Sku Inventory"
+        title={appLocaleName(userContext,"CreateNew")}
+        content={appLocaleName(userContext,"CreateNew")}
         wrapperClassName={styles.advancedForm}
       >
-        <Card title="基础信息" className={styles.card} bordered={false}>
+        <Card title={appLocaleName(userContext,"BasicInfo")} className={styles.card} bordered={false}>
           <Form >
             <Row gutter={16}>
 
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.name} {...formItemLayout}>
                   {getFieldDecorator('name', {
-                    rules: [{ required: true, message: '请输入Name' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Name" />
                   )}
@@ -222,7 +223,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.stockLevel} {...formItemLayout}>
                   {getFieldDecorator('stockLevel', {
-                    rules: [{ required: true, message: '请输入Stock Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Stock Level" />
                   )}
@@ -232,7 +233,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.backorderLevel} {...formItemLayout}>
                   {getFieldDecorator('backorderLevel', {
-                    rules: [{ required: true, message: '请输入Backorder Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Backorder Level" />
                   )}
@@ -242,7 +243,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.preorderLevel} {...formItemLayout}>
                   {getFieldDecorator('preorderLevel', {
-                    rules: [{ required: true, message: '请输入Preorder Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Preorder Level" />
                   )}
@@ -252,7 +253,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.stockThreshold} {...formItemLayout}>
                   {getFieldDecorator('stockThreshold', {
-                    rules: [{ required: true, message: '请输入Stock Threshold' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Stock Threshold" />
                   )}
@@ -262,7 +263,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.backorderThreshol} {...formItemLayout}>
                   {getFieldDecorator('backorderThreshol', {
-                    rules: [{ required: true, message: '请输入Backorder Threshol' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Backorder Threshol" />
                   )}
@@ -272,7 +273,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.preorderThreshol} {...formItemLayout}>
                   {getFieldDecorator('preorderThreshol', {
-                    rules: [{ required: true, message: '请输入Preorder Threshol' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Preorder Threshol" />
                   )}
@@ -282,7 +283,7 @@ class SkuInventoryCreateForm extends Component {
               <Col lg={12} md={12} sm={24}>
                 <Form.Item label={fieldLabels.status} {...formItemLayout}>
                   {getFieldDecorator('status', {
-                    rules: [{ required: true, message: '请输入Status' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Status" />
                   )}
@@ -306,7 +307,7 @@ class SkuInventoryCreateForm extends Component {
 
 
 
-        <Card title="关联" className={styles.card} bordered={false}>
+        <Card title={appLocaleName(userContext,"Associate")} className={styles.card} bordered={false}>
           <Form >
             <Row gutter={16}>
 
@@ -314,7 +315,7 @@ class SkuInventoryCreateForm extends Component {
                 <Form.Item label={fieldLabels.product} {...formItemLayout}>
                   {getFieldDecorator('productId', {
                   	initialValue: tryinit('product'),
-                    rules: [{ required: true, message: '请输入Product' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                   
                   <SelectObject 
@@ -331,7 +332,7 @@ class SkuInventoryCreateForm extends Component {
                 <Form.Item label={fieldLabels.platform} {...formItemLayout}>
                   {getFieldDecorator('platformId', {
                   	initialValue: tryinit('platform'),
-                    rules: [{ required: true, message: '请输入Platform' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                   
                   <SelectObject 
@@ -351,13 +352,13 @@ class SkuInventoryCreateForm extends Component {
         <FooterToolbar>
           {getErrorInfo()}
           <Button type="primary" onClick={submitCreateForm} loading={submitting} htmlType="submit">
-            提交
+            {appLocaleName(userContext,"Submit")}
           </Button>
           <Button type="primary" onClick={submitCreateFormAndContinue} loading={submitting}>
-            提交并建下一个
+            {appLocaleName(userContext,"SubmitAndContinue")}
           </Button>
           <Button type="danger" onClick={goback} loading={submitting}>
-            放弃
+            {appLocaleName(userContext,"Discard")}
           </Button>
         </FooterToolbar>
       </PageHeaderLayout>

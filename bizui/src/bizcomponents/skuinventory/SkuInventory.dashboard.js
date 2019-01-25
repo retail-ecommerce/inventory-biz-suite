@@ -20,7 +20,7 @@ import DescriptionList from '../../components/DescriptionList';
 import ImagePreview from '../../components/ImagePreview';
 import GlobalComponents from '../../custcomponents';
 import DashboardTool from '../../common/Dashboard.tool'
-
+import appLocaleName from '../../common/Locale.tool'
 
 const {aggregateDataset,calcKey, defaultHideCloseTrans,
   defaultImageListOf,defaultSettingListOf,defaultBuildTransferModal,
@@ -76,7 +76,7 @@ const internalSummaryOf = (skuInventory,targetComponent) =>{
 	
 	
 	const {SkuInventoryService} = GlobalComponents
-	
+	const userContext = null
 	return (
 	<DescriptionList className={styles.headerList} size="small" col="4">
 <Description term="Id">{skuInventory.id}</Description> 
@@ -88,7 +88,7 @@ const internalSummaryOf = (skuInventory,targetComponent) =>{
 <Description term="Backorder Threshol">{skuInventory.backorderThreshol}</Description> 
 <Description term="Preorder Threshol">{skuInventory.preorderThreshol}</Description> 
 <Description term="Status">{skuInventory.status}</Description> 
-<Description term="Product">{skuInventory.product==null?"未分配":skuInventory.product.displayName}
+<Description term="Product">{skuInventory.product==null?appLocaleName(userContext,"NotAssigned"):skuInventory.product.displayName}
  <Icon type="swap" onClick={()=>
   showTransferModel(targetComponent,"Product","product",SkuInventoryService.requestCandidateProduct,
 	      SkuInventoryService.transferToAnotherProduct,"anotherProductId",skuInventory.product?skuInventory.product.id:"")} 
@@ -109,7 +109,7 @@ class SkuInventoryDashboard extends Component {
     candidateReferenceList: {},
     candidateServiceName:"",
     candidateObjectType:"city",
-    targetLocalName:"城市",
+    targetLocalName:"",
     transferServiceName:"",
     currentValue:"",
     transferTargetParameterName:"",  
@@ -136,7 +136,6 @@ class SkuInventoryDashboard extends Component {
     
       	],
   	};
-    //下面各个渲染方法都可以定制，只要在每个模型的里面的_features="custom"就可以得到定制的例子
     
     const renderExtraHeader = this.props.renderExtraHeader || internalRenderExtraHeader
     const settingListOf = this.props.settingListOf || internalSettingListOf

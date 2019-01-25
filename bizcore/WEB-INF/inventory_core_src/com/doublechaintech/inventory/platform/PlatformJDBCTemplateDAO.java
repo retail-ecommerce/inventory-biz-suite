@@ -225,9 +225,10 @@ public class PlatformJDBCTemplateDAO extends InventoryNamingServiceDAO implement
  		return checkOptions(options,PlatformTokens.PRODUCT_LIST);
  	}
  	protected boolean isAnalyzeProductListEnabled(Map<String,Object> options){		
- 		return checkOptions(options,PlatformTokens.PRODUCT_LIST+".analyze");
+ 		return true;
+ 		//return checkOptions(options,PlatformTokens.PRODUCT_LIST+".analyze");
  	}
-
+	
 	protected boolean isSaveProductListEnabled(Map<String,Object> options){
 		return checkOptions(options, PlatformTokens.PRODUCT_LIST);
 		
@@ -239,9 +240,10 @@ public class PlatformJDBCTemplateDAO extends InventoryNamingServiceDAO implement
  		return checkOptions(options,PlatformTokens.SKU_INVENTORY_LIST);
  	}
  	protected boolean isAnalyzeSkuInventoryListEnabled(Map<String,Object> options){		
- 		return checkOptions(options,PlatformTokens.SKU_INVENTORY_LIST+".analyze");
+ 		return true;
+ 		//return checkOptions(options,PlatformTokens.SKU_INVENTORY_LIST+".analyze");
  	}
-
+	
 	protected boolean isSaveSkuInventoryListEnabled(Map<String,Object> options){
 		return checkOptions(options, PlatformTokens.SKU_INVENTORY_LIST);
 		
@@ -279,7 +281,7 @@ public class PlatformJDBCTemplateDAO extends InventoryNamingServiceDAO implement
 	 		extractProductList(platform, loadOptions);
  		}	
  		if(isAnalyzeProductListEnabled(loadOptions)){
-	 		// analyzeProductList(platform, loadOptions);
+	 		analyzeProductList(platform, loadOptions);
  		}
  		
 		
@@ -287,7 +289,7 @@ public class PlatformJDBCTemplateDAO extends InventoryNamingServiceDAO implement
 	 		extractSkuInventoryList(platform, loadOptions);
  		}	
  		if(isAnalyzeSkuInventoryListEnabled(loadOptions)){
-	 		// analyzeSkuInventoryList(platform, loadOptions);
+	 		analyzeSkuInventoryList(platform, loadOptions);
  		}
  		
 		

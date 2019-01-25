@@ -222,9 +222,10 @@ public class ProductJDBCTemplateDAO extends InventoryNamingServiceDAO implements
  		return checkOptions(options,ProductTokens.SKU_INVENTORY_LIST);
  	}
  	protected boolean isAnalyzeSkuInventoryListEnabled(Map<String,Object> options){		
- 		return checkOptions(options,ProductTokens.SKU_INVENTORY_LIST+".analyze");
+ 		return true;
+ 		//return checkOptions(options,ProductTokens.SKU_INVENTORY_LIST+".analyze");
  	}
-
+	
 	protected boolean isSaveSkuInventoryListEnabled(Map<String,Object> options){
 		return checkOptions(options, ProductTokens.SKU_INVENTORY_LIST);
 		
@@ -266,7 +267,7 @@ public class ProductJDBCTemplateDAO extends InventoryNamingServiceDAO implements
 	 		extractSkuInventoryList(product, loadOptions);
  		}	
  		if(isAnalyzeSkuInventoryListEnabled(loadOptions)){
-	 		// analyzeSkuInventoryList(product, loadOptions);
+	 		analyzeSkuInventoryList(product, loadOptions);
  		}
  		
 		

@@ -10,6 +10,7 @@ import FooterToolbar from '../../components/FooterToolbar'
 
 import styles from './SkuInventory.updateform.less'
 import SkuInventoryBase from './SkuInventory.base'
+import appLocaleName from '../../common/Locale.tool'
 
 const { Option } = Select
 const { RangePicker } = DatePicker
@@ -88,6 +89,7 @@ class SkuInventoryUpdateForm extends Component {
     const { getFieldDecorator, validateFieldsAndScroll, getFieldsError } = form
     const { convertedImagesValues } = this.state
     const { setFieldsValue } = this.props.form
+    const userContext = null
     const {fieldLabels} = SkuInventoryBase
     const capFirstChar = (value)=>{
     	//const upper = value.replace(/^\w/, c => c.toUpperCase());
@@ -100,7 +102,7 @@ class SkuInventoryUpdateForm extends Component {
           console.log('code go here', error)
           return
         }
-
+		
         const { owner, role } = this.props
         const skuInventoryId = values.id
         const imagesValues = mapBackToImageValues(convertedImagesValues)
@@ -184,7 +186,7 @@ class SkuInventoryUpdateForm extends Component {
         payload: {
           id: owner.id,
           type: 'skuInventory',
-          listName:'Sku Inventory列表' 
+          listName:appLocaleName(userContext,"List") 
         },
       })
     }
@@ -215,7 +217,7 @@ class SkuInventoryUpdateForm extends Component {
       return (
         <span className={styles.errorIcon}>
           <Popover
-            title="表单校验信息"
+            title={appLocaleName(userContext,"FieldValidateInfo")}
             content={errorList}
             overlayClassName={styles.errorPopover}
             trigger="click"
@@ -229,7 +231,7 @@ class SkuInventoryUpdateForm extends Component {
     }
     
     if (!selectedRows) {
-      return (<div>缺少被更新的对象</div>)
+      return (<div>{appLocaleName(userContext,"NoTargetItems")}</div>)
     }
 	const selectedRow = this.getSelectedRow()
 
@@ -244,11 +246,11 @@ class SkuInventoryUpdateForm extends Component {
 
     return (
       <PageHeaderLayout
-        title={"更新Sku Inventory"+(currentUpdateIndex+1)+"/"+selectedRows.length}
-        content="更新Sku Inventory"
+        title={appLocaleName(userContext,"Update")+(currentUpdateIndex+1)+"/"+selectedRows.length}
+        content={appLocaleName(userContext,"Update")}
         wrapperClassName={styles.advancedForm}
       >
-        <Card title="基础信息" className={styles.card} bordered={false}>
+        <Card title={appLocaleName(userContext,"BasicInfo")} className={styles.card} bordered={false}>
           <Form >
             <Row gutter={16}>
             
@@ -257,7 +259,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.id} {...formItemLayout}>
                   {getFieldDecorator('id', {
                     initialValue: selectedRow.id,
-                    rules: [{ required: true, message: '请输入Id' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Id" disabled/>
                     
@@ -269,7 +271,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.name} {...formItemLayout}>
                   {getFieldDecorator('name', {
                     initialValue: selectedRow.name,
-                    rules: [{ required: true, message: '请输入Name' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Name" />
                     
@@ -281,7 +283,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.stockLevel} {...formItemLayout}>
                   {getFieldDecorator('stockLevel', {
                     initialValue: selectedRow.stockLevel,
-                    rules: [{ required: true, message: '请输入Stock Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Stock Level" />
                     
@@ -293,7 +295,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.backorderLevel} {...formItemLayout}>
                   {getFieldDecorator('backorderLevel', {
                     initialValue: selectedRow.backorderLevel,
-                    rules: [{ required: true, message: '请输入Backorder Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Backorder Level" />
                     
@@ -305,7 +307,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.preorderLevel} {...formItemLayout}>
                   {getFieldDecorator('preorderLevel', {
                     initialValue: selectedRow.preorderLevel,
-                    rules: [{ required: true, message: '请输入Preorder Level' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Preorder Level" />
                     
@@ -317,7 +319,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.stockThreshold} {...formItemLayout}>
                   {getFieldDecorator('stockThreshold', {
                     initialValue: selectedRow.stockThreshold,
-                    rules: [{ required: true, message: '请输入Stock Threshold' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Stock Threshold" />
                     
@@ -329,7 +331,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.backorderThreshol} {...formItemLayout}>
                   {getFieldDecorator('backorderThreshol', {
                     initialValue: selectedRow.backorderThreshol,
-                    rules: [{ required: true, message: '请输入Backorder Threshol' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Backorder Threshol" />
                     
@@ -341,7 +343,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.preorderThreshol} {...formItemLayout}>
                   {getFieldDecorator('preorderThreshol', {
                     initialValue: selectedRow.preorderThreshol,
-                    rules: [{ required: true, message: '请输入Preorder Threshol' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Preorder Threshol" />
                     
@@ -353,7 +355,7 @@ class SkuInventoryUpdateForm extends Component {
                 <Form.Item label={fieldLabels.status} {...formItemLayout}>
                   {getFieldDecorator('status', {
                     initialValue: selectedRow.status,
-                    rules: [{ required: true, message: '请输入Status' }],
+                    rules: [{ required: true, message: appLocaleName(userContext,"PleaseInput") }],
                   })(
                     <Input placeholder="请输入Status" />
                     
@@ -373,16 +375,16 @@ class SkuInventoryUpdateForm extends Component {
         <FooterToolbar>
           {getErrorInfo()}
           <Button type="primary" onClick={submitUpdateForm} loading={submitting} htmlType="submit">
-            更新
+            {appLocaleName(userContext,"Update")}
           </Button>
           <Button type="primary" onClick={submitUpdateFormAndContinue} loading={submitting} disabled={currentUpdateIndex + 1 >= selectedRows.length}>
-            更新并装载下一个
+            {appLocaleName(userContext,"UpdateAndContinue")}
           </Button>
           <Button type="default" onClick={skipToNext} loading={submitting} disabled={currentUpdateIndex + 1 >= selectedRows.length}>
-            略过
+            {appLocaleName(userContext,"Skip")}
           </Button>
           <Button type="default" onClick={goback} loading={submitting}>
-            取消
+            {appLocaleName(userContext,"Cancel")}
           </Button>
         </FooterToolbar>
       </PageHeaderLayout>
