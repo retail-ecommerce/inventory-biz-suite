@@ -1,7 +1,7 @@
 
 export const SYSTEM_SHORT_NAME = "inventory" //Use for requssting different apps
 export const SYSTEM_LOCAL_NAME = "Inventory Services" 
-export const BUILD_TIIME="Fri Jan 25 22:14:42 CST 2019"
+export const BUILD_TIIME="Sat Jan 26 12:09:43 CST 2019"
 export const MEDIA_UPLOAD_URL="https://www.doublechaintech.com/mss/upload.html"
 export const MEDIA_PREFIX="https://www.doublechaintech.com/mss/"
 

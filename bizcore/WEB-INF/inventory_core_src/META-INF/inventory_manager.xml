@@ -9,7 +9,7 @@
 	<bean id="checker" class="com.doublechaintech.inventory.InventoryChecker" scope="prototype"></bean>
 
 	<bean id="platformManagerBase" class="com.doublechaintech.inventory.platform.PlatformManagerImpl"/>
-	<bean id="platformManager" class="com.doublechaintech.inventory.platform.PlatformManagerImpl" parent="platformManagerBase" ></bean>
+	<bean id="platformManager" class="com.doublechaintech.inventory.platform.PlatformCustomManagerImpl" parent="platformManagerBase" ></bean>
 	
 	<bean id="productManagerBase" class="com.doublechaintech.inventory.product.ProductManagerImpl"/>
 	<bean id="productManager" class="com.doublechaintech.inventory.product.ProductManagerImpl" parent="productManagerBase" ></bean>
@@ -18,19 +18,19 @@
 	<bean id="skuInventoryManager" class="com.doublechaintech.inventory.skuinventory.SkuInventoryManagerImpl" parent="skuInventoryManagerBase" ></bean>
 	
 	<bean id="userDomainManagerBase" class="com.doublechaintech.inventory.userdomain.UserDomainManagerImpl"/>
-	<bean id="userDomainManager" class="com.doublechaintech.inventory.userdomain.UserDomainManagerImpl" parent="userDomainManagerBase" ></bean>
+	<bean id="userDomainManager" class="com.doublechaintech.inventory.userdomain.UserDomainCustomManagerImpl" parent="userDomainManagerBase" ></bean>
 	
 	<bean id="userWhiteListManagerBase" class="com.doublechaintech.inventory.userwhitelist.UserWhiteListManagerImpl"/>
 	<bean id="userWhiteListManager" class="com.doublechaintech.inventory.userwhitelist.UserWhiteListManagerImpl" parent="userWhiteListManagerBase" ></bean>
 	
 	<bean id="secUserManagerBase" class="com.doublechaintech.inventory.secuser.SecUserManagerImpl"/>
-	<bean id="secUserManager" class="com.doublechaintech.inventory.secuser.SecUserManagerImpl" parent="secUserManagerBase" ></bean>
+	<bean id="secUserManager" class="com.doublechaintech.inventory.secuser.SecUserCustomManagerImpl" parent="secUserManagerBase" ></bean>
 	
 	<bean id="secUserBlockingManagerBase" class="com.doublechaintech.inventory.secuserblocking.SecUserBlockingManagerImpl"/>
-	<bean id="secUserBlockingManager" class="com.doublechaintech.inventory.secuserblocking.SecUserBlockingManagerImpl" parent="secUserBlockingManagerBase" ></bean>
+	<bean id="secUserBlockingManager" class="com.doublechaintech.inventory.secuserblocking.SecUserBlockingCustomManagerImpl" parent="secUserBlockingManagerBase" ></bean>
 	
 	<bean id="userAppManagerBase" class="com.doublechaintech.inventory.userapp.UserAppManagerImpl"/>
-	<bean id="userAppManager" class="com.doublechaintech.inventory.userapp.UserAppManagerImpl" parent="userAppManagerBase" ></bean>
+	<bean id="userAppManager" class="com.doublechaintech.inventory.userapp.UserAppCustomManagerImpl" parent="userAppManagerBase" ></bean>
 	
 	<bean id="listAccessManagerBase" class="com.doublechaintech.inventory.listaccess.ListAccessManagerImpl"/>
 	<bean id="listAccessManager" class="com.doublechaintech.inventory.listaccess.ListAccessManagerImpl" parent="listAccessManagerBase" ></bean>
