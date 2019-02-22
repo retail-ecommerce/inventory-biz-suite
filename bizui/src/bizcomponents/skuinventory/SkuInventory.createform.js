@@ -18,12 +18,12 @@ const testValues = {};
 /*
 const testValues = {
   name: 'Blue Jeans',
-  stockLevel: '905',
-  backorderLevel: '975',
-  preorderLevel: '825',
-  stockThreshold: '949',
-  backorderThreshol: '779',
-  preorderThreshol: '950',
+  stockLevel: '895',
+  backorderLevel: '960',
+  preorderLevel: '899',
+  stockThreshold: '958',
+  backorderThreshol: '752',
+  preorderThreshol: '913',
   status: 'IN_STOCK',
   productId: 'P000001',
   platformId: 'P000001',
